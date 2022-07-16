@@ -1,7 +1,7 @@
 {
   "name": "ssr-server",
   "version": "1.0.0",
-  "description": "ssr DEMO服务层",
+  "description": "服务器端渲染demo",
   "main": "index.js",
   "scripts": {
     "start": "npx nodemon --watch src/**/* --exec ts-node src/server/index.tsx",
