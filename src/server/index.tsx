@@ -1,6 +1,6 @@
 import express from "express";
 import { renderToString } from "react-dom/server";
-import Home from "./pages/home";
+import Home from "../pages/Home/index";
 
 const app = express();
 const content = renderToString(<Home />); // 编译需要渲染的JSX, 转成对应的HTML STRING
