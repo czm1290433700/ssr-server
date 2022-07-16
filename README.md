@@ -4,9 +4,20 @@
 
 ## 项目启动
 
+### 无事件相关场景，纯 DOM 渲染
+
 ```
 npm install
 npm run start
+```
+
+### 包括事件处理等场景的完整服务器端渲染
+
+```
+npm install
+npm run build:client
+npm run build:server
+npm run start:bundle
 ```
 
 ## 目录结构
