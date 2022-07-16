@@ -1,4 +1,3 @@
-import { Console } from "console";
 import express from "express";
 const app = express();
 

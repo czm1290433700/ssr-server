@@ -1,8 +1,6 @@
 import { FC } from "react";
 
-interface IProps {}
-
-const Home: FC<IProps> = () => {
+const Home: FC = () => {
   return <div>hello-ssr</div>;
 };
 
