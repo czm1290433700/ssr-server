@@ -6,11 +6,17 @@
 
 ```
 npm install
-npm run build // 如果第一次启动需要执行`npm run build`, 服务器端渲染引入的静态脚本是指向构建文件的
+npm run build:client
+npm run build:server
 npm run start
 ```
 
-编辑代码需要重新 build, 考虑加一下热更新
+### 热更新
+
+nodemon 已经内置对 node 代码修改的热更新，但是因为我们执行的其实是构建编译后的产物，如果要保证结果的实时更新，需要另开两个终端分别执行
+`npm run build:client`和`npm run build:server`, webpack 的构建已经保持监听的状态
+
+感兴趣的同学也可以用 webpack 的 devServer 来实现，大体思路就是再启一个 webpack 的 serve 用于监听热更新，热更新后更新页面的 window.location 即可
 
 ## 目录结构
 

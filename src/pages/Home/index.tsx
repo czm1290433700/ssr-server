@@ -9,7 +9,7 @@ const Home: FC = () => {
           alert("hello, ssr!");
         }}
       >
-        alert
+        alerta
       </button>
     </div>
   );

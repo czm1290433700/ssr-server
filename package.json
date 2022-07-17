@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npx nodemon --watch src/**/* --exec node server_build/bundle.js",
-    "build": "npm run build:client && npm run build:server",
-    "build:client": "npx webpack build --config ./webpack.client.js",
-    "build:server": "npx webpack build --config ./webpack.server.js",
+    "build:client": "npx webpack build --config ./webpack.client.js --watch",
+    "build:server": "npx webpack build --config ./webpack.server.js --watch",
     "lint": "npx eslint src/**",
     "prepare": "husky install"
   },
