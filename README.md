@@ -4,42 +4,17 @@
 
 ## 项目启动
 
-### 直接执行
-
 ```
 npm install
-npm run dev
+npm run build // 如果第一次启动需要执行`npm run build`, 服务器端渲染引入的静态脚本是指向构建文件的
+npm run start
 ```
 
-### 执行生产文件
-
-```
-npm install
-npm run prod
-```
+编辑代码需要重新 build, 考虑加一下热更新
 
 ## 目录结构
 
-│ .eslintrc.js
-│ .gitignore
-│ commitlint.config.js
-│ package-lock.json
-│ package.json
-│ README.md
-│ tsconfig.json
-│
-├─.husky
-│ │ pre-commit
-│ │
-│ └─\_
-│ .gitignore
-│ husky.sh
-│
-└─src
-│ index.tsx
-│
-└─pages
-home.tsx
+// 最后更新
 
 ## 其他命令
 

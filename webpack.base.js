@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   module: {
     rules: [
@@ -18,5 +20,8 @@ module.exports = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      "@": path.resolve(process.cwd(), "./src"),
+    },
   },
 };
