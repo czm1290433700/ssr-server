@@ -1,16 +1,22 @@
-import { Route, Routes } from "react-router-dom";
 import Home from "@/pages/Home";
 import Demo from "@/pages/Demo";
 
-const Router = (): JSX.Element => {
-  return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/demo" element={<Demo />}></Route>
-      </Routes>
-    </div>
-  );
-};
+interface IRouter {
+  path: string;
+  element: JSX.Element;
+  loadData?: () => Promise<any>;
+}
 
-export default Router;
+const router: Array<IRouter> = [
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/",
+    element: <Demo />,
+    loadData: Demo.getInitProps,
+  },
+];
+
+export default router;

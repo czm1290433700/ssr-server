@@ -18,6 +18,17 @@ nodemon 已经内置对 node 代码修改的热更新，但是因为我们执行
 
 感兴趣的同学也可以用 webpack 的 devServer 来实现，大体思路就是再启一个 webpack 的 serve 用于监听热更新，热更新后更新页面的 window.location 即可
 
+## nodejs 调试
+
+已经内置 launch.json， 不需要对 program 相关参数进行调整
+
+### 具体步骤
+
+- 关闭`npm run start`服务器
+- 切到需要调试的文件按 F5 即可
+
+**server/index.tsx 直接是没办法用 ts-node 来执行的, 包含需要 webpack 编译的别名，切到 server_build/bundle.js 下按 F5 调试即可**
+
 ## 目录结构
 
 // 最后更新
