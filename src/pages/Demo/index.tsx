@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { ISSRFunction } from "@/utils/type";
+import { connect } from "react-redux";
 import axios from "axios";
+import { getDemoData } from "./store/demoReducer";
 
 interface IProps {
   content?: string;
+  getDemoData?: (data: string) => void;
 }
 
 const Demo: ISSRFunction<IProps> = (data) => {
@@ -20,19 +23,39 @@ const Demo: ISSRFunction<IProps> = (data) => {
   //     });
   // }, []);
 
-  return <div>{data.content}</div>;
+  return (
+    <div>
+      <h1>{data.content}</h1>
+      <button
+        onClick={(): void => {
+          data.getDemoData && data.getDemoData("刷新过后的数据");
+        }}
+      >
+        刷新
+      </button>
+    </div>
+  );
 };
 
-Demo.getInitProps = async () => {
-  let content = "";
-  await axios
-    .post("/api/getDemoData", {
-      content: "这是一个demo",
-    })
-    .then((res) => {
-      content = res.data?.data?.content || "";
-    });
-  return { content };
+const mapStateToProps = (state: any) => {
+  // 将对应reducer的内容透传回dom
+  return {
+    content: state?.demo?.content,
+  };
 };
 
-export default Demo;
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    getDemoData: (data: string) => {
+      dispatch(getDemoData(data));
+    },
+  };
+};
+
+const storeDemo: any = connect(mapStateToProps, mapDispatchToProps)(Demo);
+
+storeDemo.getInitProps = (store: any, data?: string) => {
+  return store.dispatch(getDemoData(data || "这是初始化的demo"));
+};
+
+export default storeDemo;

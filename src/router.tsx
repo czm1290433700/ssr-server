@@ -4,7 +4,7 @@ import Demo from "@/pages/Demo";
 interface IRouter {
   path: string;
   element: JSX.Element;
-  loadData?: () => Promise<any>;
+  loadData?: (store: any) => any;
 }
 
 const router: Array<IRouter> = [
@@ -13,7 +13,7 @@ const router: Array<IRouter> = [
     element: <Home />,
   },
   {
-    path: "/",
+    path: "/demo",
     element: <Demo />,
     loadData: Demo.getInitProps,
   },
