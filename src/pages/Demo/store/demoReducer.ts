@@ -13,9 +13,12 @@ const getDemoData = createAsyncThunk(
 
 const demoReducer = createSlice({
   name: "demo",
-  initialState: {
-    content: "默认数据",
-  },
+  initialState:
+    typeof window !== "undefined"
+      ? (window as any)?.context?.demo
+      : {
+          content: "默认数据",
+        },
   // 同步reducer
   reducers: {},
   // 异步reducer

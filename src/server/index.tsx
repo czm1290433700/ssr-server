@@ -70,6 +70,11 @@ app.get("*", (req, res) => {
         <div id="root">${content}</div>
         <script src="/index.js"></script>
       </body>
+      <script>
+        window.context = {
+          state: ${JSON.stringify(serverStore.getState())}
+        }
+      <script>
     </html>
   `);
   });
