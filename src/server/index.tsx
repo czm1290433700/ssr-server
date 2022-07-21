@@ -72,13 +72,13 @@ app.get("*", (req, res) => {
       </head>
       <body>
         <div id="root">${content}</div>
+        <script>
+          window.context = {
+            state: ${JSON.stringify(serverStore.getState())}
+          }
+        </script>
         <script src="/index.js"></script>
       </body>
-      <script>
-        window.context = {
-          state: ${JSON.stringify(serverStore.getState())}
-        }
-      <script>
     </html>
   `);
   });

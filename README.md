@@ -31,7 +31,58 @@ nodemon 已经内置对 node 代码修改的热更新，但是因为我们执行
 
 ## 目录结构
 
-// 最后更新
+│ .eslintrc.js // eslint 配置文件
+│ .gitignore // git 上传忽略
+│ commitlint.config.js // commitlint 配置
+│ package-lock.json // 依赖锁
+│ package.json
+│ README.md
+│ tsconfig.json // TS 配置
+│ webpack.base.js // 通用 webpack 配置
+│ webpack.client.js // 客户端打包
+│ webpack.server.js // 服务端打包
+│
+├─.husky // 预提交钩子
+│ │ pre-commit
+│ │
+│ └─\_
+│ .gitignore
+│ husky.sh
+│
+├─.vscode // NODEJS 调试
+│ launch.json
+│
+├─client_build // 客户端打包
+│ index.js
+│
+├─server_build // 服务端打包
+│ bundle.js
+│
+└─src
+│ router.tsx
+│
+├─client
+│ index.tsx // 客户端入口
+│
+├─pages
+│ ├─Demo
+│ │ │ index.tsx
+│ │ │
+│ │ └─store
+│ │ demoReducer.ts  
+ │ │ index.ts
+│ │
+│ └─Home
+│ index.tsx
+│
+├─server
+│ index.tsx // 服务端入口文件
+│
+├─store
+│ index.ts // 同构的缓存
+│
+└─utils
+type.ts // 通用的一些 ts 类型
 
 ## 其他命令
 

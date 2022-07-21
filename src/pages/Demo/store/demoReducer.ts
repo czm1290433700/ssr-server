@@ -15,7 +15,7 @@ const demoReducer = createSlice({
   name: "demo",
   initialState:
     typeof window !== "undefined"
-      ? (window as any)?.context?.demo
+      ? (window as any)?.context?.state?.demo
       : {
           content: "默认数据",
         },
