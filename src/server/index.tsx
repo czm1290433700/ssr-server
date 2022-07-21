@@ -8,6 +8,7 @@ import { matchRoutes, RouteObject } from "react-router-dom";
 import router from "@/router";
 import { serverStore } from "@/store";
 import { Provider } from "react-redux";
+import { Helmet } from "react-helmet";
 
 const app = express();
 
@@ -61,10 +62,13 @@ app.get("*", (req, res) => {
       </Provider>
     );
 
+    const helmet = Helmet.renderStatic();
+
     res.send(`
     <html
       <head>
-        <title>ssr-server</title>
+        ${helmet.title.toString()}
+        ${helmet.meta.toString()}
       </head>
       <body>
         <div id="root">${content}</div>
