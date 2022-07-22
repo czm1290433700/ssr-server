@@ -4,7 +4,7 @@
   "description": "服务器端渲染demo",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon --watch src/**/* --exec node server_build/bundle.js",
+    "start": "npx nodemon --watch src server_build/bundle.js",
     "build:client": "npx webpack build --config ./webpack.client.js --watch",
     "build:server": "npx webpack build --config ./webpack.server.js --watch",
     "lint": "npx eslint src/**",
