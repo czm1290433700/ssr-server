@@ -30,6 +30,7 @@ nodemon 已经内置对 node 代码修改的热更新，但是因为我们执行
 **server/index.tsx 直接是没办法用 ts-node 来执行的, 包含需要 webpack 编译的别名，切到 server_build/bundle.js 下按 F5 调试即可**
 
 ## 目录结构
+```
 
 │ .eslintrc.js // eslint 配置文件
 │ .gitignore // git 上传忽略
@@ -83,6 +84,7 @@ nodemon 已经内置对 node 代码修改的热更新，但是因为我们执行
 │
 └─utils
 type.ts // 通用的一些 ts 类型
+```
 
 ## 其他命令
 
