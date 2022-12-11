@@ -1,5 +1,6 @@
-import Home from "@/pages/Home";
-import Demo from "@/pages/Demo";
+import React from 'react';
+import Home from '@/pages/Home';
+import Demo from '@/pages/Demo';
 
 interface IRouter {
   path: string;
@@ -9,11 +10,11 @@ interface IRouter {
 
 const router: Array<IRouter> = [
   {
-    path: "/",
+    path: '/',
     element: <Home />,
   },
   {
-    path: "/demo",
+    path: '/demo',
     element: <Demo />,
     loadData: Demo.getInitProps,
   },

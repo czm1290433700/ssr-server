@@ -1,3 +1,3 @@
-import { demoReducer } from "./demoReducer";
+import { demoReducer } from './demoReducer';
 
 export { demoReducer };
